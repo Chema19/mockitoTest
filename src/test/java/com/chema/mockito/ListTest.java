@@ -35,19 +35,19 @@ public class ListTest {
 	@Test
 	public void letsMockListGet() {
 		List<String> list = mock(List.class);
-		Mockito.when(list.get(0)).thenReturn("in28Minutes");
-		assertEquals("in28Minutes", list.get(0));
+		Mockito.when(list.get(0)).thenReturn("chema");
+		assertEquals("chema", list.get(0));
 		assertNull(list.get(1));
 	}
 
 	@Test
 	public void letsMockListGetWithAny() {
 		List<String> list = mock(List.class);
-		Mockito.when(list.get(Mockito.anyInt())).thenReturn("in28Minutes");
+		Mockito.when(list.get(Mockito.anyInt())).thenReturn("chema");
 		// If you are using argument matchers, all arguments
 		// have to be provided by matchers.
-		assertEquals("in28Minutes", list.get(0));
-		assertEquals("in28Minutes", list.get(1));
+		assertEquals("chema", list.get(0));
+		assertEquals("chema", list.get(1));
 	}
 
 	@Test
@@ -55,11 +55,11 @@ public class ListTest {
 		List<String> list = mock(List.class);
 
 		//given
-		given(list.get(Mockito.anyInt())).willReturn("in28Minutes");
+		given(list.get(Mockito.anyInt())).willReturn("chema");
 
 		//then
-		assertThat("in28Minutes", is(list.get(0)));
-		assertThat("in28Minutes", is(list.get(0)));
+		assertThat("chema", is(list.get(0)));
+		assertThat("chema", is(list.get(0)));
 	}
 
 }
